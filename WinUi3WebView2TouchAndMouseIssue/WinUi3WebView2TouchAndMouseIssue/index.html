@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        #header {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+        .header-wrap {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+<div id="header">
+    <div class="header-wrap">
+        <!-- Event logs will appear here -->
+    </div>
+</div>
+
+</body>
+<script>
+    (function () {
+  var span, eventTypes = [
+    'click', 'mousedown', 'mouseup', 'mouseover', 'mousemove', 'mouseout',
+    'touchstart', 'touchend', 'touchmove', 'touchcancel', 'touchleave'
+  ];
+  
+  var header = document.querySelector('#header .header-wrap');
+  
+  // Log a single gesture to the console and show it at the top of the page.
+  function logEvent (event) {
+    console.log(event.type);
+    span = document.createElement('span');
+    span.style.color = 'white';
+    span.appendChild(document.createTextNode(event.type + ' -> '));
+    header.insertBefore(span, header.firstChild);
+  }
+  
+  // Attach event listeners for all gestures.
+  for (var i = 0; i < eventTypes.length; i++) {
+    document.addEventListener(eventTypes[i], logEvent);
+  }
+})();
+</script>
+</html> 
