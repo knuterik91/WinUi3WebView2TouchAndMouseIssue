@@ -2,6 +2,7 @@ using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.Web.WebView2.Core;
 using System;
+using System.IO;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +27,10 @@ public sealed partial class MainPage : Page
         };
         var env = await CoreWebView2Environment.CreateWithOptionsAsync(null, null, options);
         await MyWebView.EnsureCoreWebView2Async(env);
+
         MyWebView.CoreWebView2.Settings.IsSwipeNavigationEnabled = false;
+
+        string htmlPath = Path.Combine(AppContext.BaseDirectory, "index.html");
+        MyWebView.Source = new Uri(htmlPath);
     }
 }

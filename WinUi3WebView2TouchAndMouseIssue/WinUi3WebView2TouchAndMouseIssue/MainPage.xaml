@@ -12,8 +12,7 @@
     Loading="Page_Loading">
 
     <Grid>
-        <controls:WebView2 x:Name="MyWebView"  Grid.Row="1" Grid.ColumnSpan="2"
-Source="file:///C:\dev\WinUi3WebView2TouchAndMouseIssue\WinUi3WebView2TouchAndMouseIssue\WinUi3WebView2TouchAndMouseIssue\index.html" HorizontalAlignment="Stretch" 
+        <controls:WebView2 x:Name="MyWebView"  Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" 
 VerticalAlignment="Stretch"/>
     </Grid>
 </Page>
